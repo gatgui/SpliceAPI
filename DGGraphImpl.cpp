@@ -454,7 +454,7 @@ bool DGGraphImpl::loadExtension(const std::string & extName, std::string * error
     {
       if( boost::filesystem::exists(paths[i])) {
         for ( boost::filesystem::directory_iterator end, dir(paths[i]); dir != end; ++dir ) {
-#if BOOST_VERSION == 105500
+#if BOOST_VERSION >= 105500
           std::string lastBit = dir->path().filename().string();
 #else
           std::string lastBit = dir->path().filename();
