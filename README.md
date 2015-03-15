@@ -29,6 +29,7 @@ To inform scons where to find the Fabric Core includes as well as the thirdparty
 * FABRIC_SPLICE_VERSION: Refers to the version you want to build. Typically the name of the branch (for example 1.13.0)
 * FABRIC_DIR: Should point to Fabric Engine's installation folder.
 * BOOST_DIR: Should point to the boost root folder (containing boost/ (includes) and lib/ for the static libraries).
+* BOOST_LIB_SUFFIX: Suffix to add to boost library names (optional, for Darwin/Linux only)
 
 The temporary files will be built into the *.build* folder, while the structured output files will be placed in the *.stage* folder.
 

@@ -12,7 +12,8 @@ Import(
   'FABRIC_BUILD_TYPE',
   'FABRIC_BUILD_OS',
   'FABRIC_BUILD_ARCH',
-  'BOOST_DIR'
+  'BOOST_DIR',
+  'BOOST_LIB_SUFFIX'
   )
 
 # configuration flags
@@ -146,7 +147,7 @@ if FABRIC_BUILD_OS == 'Windows':
       'libboost_filesystem-vc100-mt-s-1_55.lib'
       ]
 else:
-  boostFlags['LIBS'] = ['boost_thread','boost_system','boost_filesystem']
+  boostFlags['LIBS'] = map(lambda x: x+BOOST_LIB_SUFFIX, ['boost_thread','boost_system','boost_filesystem'])
 Export('boostFlags')
 
 parentEnv.MergeFlags(boostFlags)
